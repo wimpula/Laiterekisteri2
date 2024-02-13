@@ -58,7 +58,6 @@ namespace Laiterekisteri2
 
             Device laite1 = new Device("Kone1");
             Console.WriteLine("Laitteen nimi on: " + laite1.Name);
-            Console.ReadLine();
         }
     }
 }
