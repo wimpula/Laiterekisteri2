@@ -37,6 +37,8 @@ namespace Laiterekisteri2
             this.name = name;
         }
 
+        //Konstruktori kaikilla argumenteilla
+
         public Device(string name, string purchaseDate, double price, int warranty)
         {
             this.name = name;
@@ -46,6 +48,29 @@ namespace Laiterekisteri2
         }
 
     }
+
+    //Tietokoneiden luokka, perii ominaisuuksia ja metodeja laiteluokasta Device
+
+    class Computer : Device
+    {
+        // kentät ja ominaisuudet
+
+        string processorType;
+        public  string ProcessorType { get { return processorType; } set {  processorType = value; } }
+        int amountRAM;
+        public int AmountRAM { get { return amountRAM; } set { amountRAM = value; } }
+        int storageCapacity;
+        public int StorageCapacity { get {  return storageCapacity; } set {  storageCapacity = value; } }
+
+        // Konstruktorit
+
+        public Computer() : base()
+            { }
+
+
+
+    }
+
     internal class Program
     {
         //Pääohjelman luokka
@@ -58,6 +83,15 @@ namespace Laiterekisteri2
 
             Device laite1 = new Device("Kone1");
             Console.WriteLine("Laitteen nimi on: " + laite1.Name);
+            Console.WriteLine("Ostopäivä: " + laite1.PurchaseDate);
+
+            //Luodaan uusi tietokone, joka perii laiteluokan ominaisuudet ja metodit
+
+            Computer tietokone1 = new Computer();
+            Console.WriteLine("Uuden koneen nimi on: " +  tietokone1.Name);
+
+
+            Console.ReadLine();
         }
     }
 }
